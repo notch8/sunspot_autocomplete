@@ -1,3 +1,5 @@
+require "sunspot"
+
 module Sunspot
   module Type
     

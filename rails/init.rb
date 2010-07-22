@@ -1,3 +1,3 @@
 require "sunspot"
-require File.dirname(__FILE__) + "/lib/sunspot_autocomplete"
-require File.dirname(__FILE__) + "/lib/autocomplete_view_helpers"
+require File.join(File.dirname(__FILE__), *%w{.. lib sunspot_autocomplete})
+require File.join(File.dirname(__FILE__), *%w{.. lib autocomplete_view_helpers})

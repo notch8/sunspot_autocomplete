@@ -5,10 +5,10 @@ require 'rake/rdoctask'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
-    s.name = "sunspot_autocomplete"
+    s.name = "vinova_sunspot_autocomplete"
     s.summary = ""
     s.description = "A Rails plugin encapsulating autocompletion of HTML text input using Solr and Sunspot"
-    s.homepage = "http://github.com/haitham/sunspot_autocomplete"
+    s.homepage = "http://github.com/vinova/sunspot_autocomplete"
     s.authors = ["Haitham Mohammad"]
     s.add_dependency("sunspot_rails")
   end

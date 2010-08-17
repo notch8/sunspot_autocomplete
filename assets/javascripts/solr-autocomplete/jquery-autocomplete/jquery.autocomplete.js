@@ -1,5 +1,5 @@
 /*
- *  This part of the library is extended from jQuery Autocomplete plugin by Jörn Zaefferer
+ *  This part of the library is extended from jQuery Autocomplete plugin by JÃ¶rn Zaefferer
  */
 
 
@@ -472,7 +472,7 @@ $.Autocompleter.defaults = {
 	multiple: false,
 	multipleSeparator: ", ",
 	highlight: function(value, term) {
-		return value.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + term.replace(/([\^\$\(\)\[\]\{\}\*\.\+\?\|\\])/gi, "\\$1") + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
+		return value.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + term.replace(/([\^\$\(\)\[\]\{\}\*\.\+\?\|\\])/gi, "\\$1") + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong class='highlight'>$1</strong>");
 	},
     scroll: true,
     scrollHeight: 180,
@@ -658,9 +658,11 @@ $.Autocompleter.Select = function (options, input, select, config) {
 			config.mouseDownOnSelect = false;
 		});
 
-		if( options.width > 0 )
+		if( options.width > 0 ) {
 			element.css("width", options.width);
-
+			list.css("width", options.width);
+    }
+    
 		needsInit = false;
 	}
 
@@ -710,12 +712,12 @@ $.Autocompleter.Select = function (options, input, select, config) {
 		list.empty();
 		var max = limitNumberOfItems(data.length);
 		for (var i=0; i < max; i++) {
-			if (!data[i])
-				continue;
+			if (!data[i]) { continue; }
 			var formatted = options.formatItem(data[i].data, i+1, max, data[i].value, term);
-			if ( formatted === false )
-				continue;
-			var li = $("<li/>").html( options.highlight(formatted, term) ).addClass(i%2 == 0 ? "ac_even" : "ac_odd").appendTo(list)[0];
+			if ( formatted === false ) { continue; }
+			str = options.highlight(formatted, $(input).val());
+      // /* DEBUG */ console.log(input, $(input).val());
+			var li = $("<li/>").html( str ).addClass(i % 2 == 0 ? "ac_even" : "ac_odd").appendTo(list)[0];
 			$.data(li, "ac_data", data[i]);
 		}
 		listItems = list.find("li");

@@ -49,10 +49,10 @@ Gem::Specification.new do |s|
      "rdoc/fr_method_index.html",
      "rdoc/index.html",
      "rdoc/rdoc-style.css",
-     "sunspot_autocomplete.gemspec",
      "tasks/tasks.rake",
      "test/sunspot_autocomplete_test.rb",
-     "test/test_helper.rb"
+     "test/test_helper.rb",
+     "vinova_sunspot_autocomplete.gemspec"
   ]
   s.homepage = %q{http://github.com/vinova/sunspot_autocomplete}
   s.rdoc_options = ["--charset=UTF-8"]

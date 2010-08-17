@@ -123,4 +123,4 @@ module AutocompleteViewHelpers
   
 end
 
-ActionView::Base.send :include, AutocompleteViewHelpers
+ActiveSupport.on_load(:action_view) { include AutocompleteViewHelpers }
